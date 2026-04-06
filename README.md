@@ -233,9 +233,9 @@ MySQL Workbench
 📁 Repository Structure
 sql-cafe-sales-data-cleaning-analysis
 │
-├── data_cleaning.sql
-├── data_analysis.sql
-└── README.md
+```` data_cleaning.sql
+```` data_analysis.sql
+```` README.md
 🎯 Project Purpose
 
 This project was built as part of a data analytics learning path to practice:
