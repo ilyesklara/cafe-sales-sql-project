@@ -1,6 +1,6 @@
-# ☕ Cafe Sales SQL Project
+# Cafe Sales SQL Project
 
-## 📊 Project Overview
+## Project Overview
 
 This project focuses on cleaning and analyzing transactional café sales data using SQL.
 
@@ -12,7 +12,7 @@ performing business-oriented analysis using SQL
 
 The dataset contains café transactions including items sold, quantity, payment method, location type (in-store or takeaway), and transaction dates.
 
-## 📁 Dataset
+## Dataset
 
 Source: Kaggle
 Dataset: Cafe Sales – Dirty Data for Cleaning Training
@@ -23,7 +23,7 @@ The dataset contains intentionally messy data including:
 - placeholder values (UNKNOWN, ERROR)
 - inconsistent formatting
 - incorrect numeric values
-## 🧹 Data Cleaning
+## Data Cleaning
 
 Data cleaning was performed in SQL to ensure the dataset is reliable for analysis.
 
@@ -43,7 +43,7 @@ UPDATE cafe_sales
 SET transaction_date = NULL
 WHERE transaction_date NOT REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$';
 ```
-## 📈 SQL Analysis
+## SQL Analysis
 
 The analysis phase explores business questions using SQL.
 
@@ -71,7 +71,7 @@ SELECT
 FROM cafe_sales
 GROUP BY transaction_date;
 ```
-## 🧠 Advanced SQL Techniques
+## Advanced SQL Techniques
 
 The project also demonstrates more advanced SQL concepts:
 
@@ -92,7 +92,7 @@ SELECT
 FROM cafe_sales
 GROUP BY location, item;
 ```
-## 📊 Business Questions Explored
+## Business Questions Explored
 
 Some example analytical questions answered in this project:
 
@@ -101,12 +101,12 @@ Some example analytical questions answered in this project:
 - How does revenue change by day?
 - Which payment methods generate the most revenue?
 - Which items perform best for in-store vs takeaway orders?
-## 🛠️ Tools Used
+## Tools Used
 - SQL
 - MySQL
 - MySQL Workbench
 - GitHub
-## 💡 Skills Demonstrated
+## Skills Demonstrated
 - Data Cleaning
 - Data Validation
 - SQL Querying
