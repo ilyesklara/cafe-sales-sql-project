@@ -113,3 +113,5 @@ Some example analytical questions answered in this project:
 - Data Aggregation
 - Window Functions
 - Business Data Analysis
+## Contact
+  LinkedIn: www.linkedin.com/in/klára-ilyés-398402317 Email: demeterklara88@gmail.com
