@@ -1,147 +1,136 @@
-☕ Cafe Sales Data Cleaning & Analysis (SQL Project)
+☕ SQL Data Cleaning & Analysis — Cafe Sales Dataset
 
 📌 Project Overview
 
-This project demonstrates real-world data cleaning and exploratory data analysis using SQL.
-The dataset contains messy transactional data from a fictional café and was cleaned, standardized, and analyzed to extract meaningful business insights.
+This project demonstrates a complete SQL workflow using a messy café sales dataset.
+The goal was to clean and standardize transactional data before performing exploratory business analysis using SQL.
 
-The project simulates a typical data analyst workflow:
+The dataset contained multiple data quality issues such as inconsistent values, invalid dates, and non-standard formats. After cleaning the dataset, various SQL queries were used to analyze sales performance and generate business insights.
 
-Data cleaning and validation
-Data transformation
-Data quality checks
-Business analysis with SQL queries
-Creation of analytical views
+This project focuses on building practical SQL skills relevant for real-world data analytics tasks.
+
+📂 Dataset
 
 Dataset source: Kaggle
-Dataset: Cafe Sales – Dirty Data for Cleaning Training
+Dataset name: Cafe Sales – Dirty Data for Cleaning Practice
+
+The dataset contains transactional sales data including:
+
+transaction ID
+item sold
+quantity
+price per unit
+total spent
+payment method
+order type (In-Store / Takeaway)
+transaction date
 
 🧹 Data Cleaning Process
 
-The dataset originally contained several common real-world data issues:
+A structured SQL cleaning pipeline was implemented to prepare the dataset for analysis.
 
-inconsistent column names
-invalid date values
-incorrect numeric formats
-placeholder values such as UNKNOWN and ERROR
-Cleaning steps performed:
+1️⃣ Database Setup
+Created a dedicated database
+Imported the raw dataset
+Created a working table for cleaning
+2️⃣ Column Standardization
+Renamed columns to consistent snake_case
+Converted columns to appropriate data types
+Standardized numeric fields
+3️⃣ Date Cleaning
 
-✔ Created a working table for safe transformations
-✔ Standardized column names
-✔ Converted incorrect data types
-✔ Fixed calculated fields (total_spent)
-✔ Removed invalid values
-✔ Replaced placeholder values with NULL
-✔ Validated numeric values
-✔ Checked for duplicates
-✔ Performed final data validation checks
+Invalid values such as:
 
-Example Cleaning Logic
-UPDATE cafe_sales
-SET item = NULL
-WHERE item IN ('UNKNOWN', '', 'ERROR');
+ERROR
+UNKNOWN
+empty values
 
-Date validation:
+were detected and replaced with NULL before converting the column to the DATE data type.
 
-UPDATE cafe_sales
-SET transaction_date = NULL
-WHERE transaction_date NOT REGEXP '^[0-9]{4}-[0-9]{2}-[0-9]{2}$';
+4️⃣ Handling Invalid Values
+
+Inconsistent categorical values were cleaned:
+
+UNKNOWN
+ERROR
+empty strings
+
+These were standardized to NULL values.
+
+5️⃣ Data Validation
+
+Several validation checks were performed:
+
+negative or zero numeric values
+total spent mismatches (quantity * price_per_unit)
+duplicate transactions
+missing dates
 
 📊 Data Analysis
 
-After cleaning the dataset, several business questions were explored using SQL.
+After cleaning the dataset, multiple SQL queries were written to explore the sales data.
 
-Example questions answered:
-What is the total revenue of the café?
-Which items generate the most revenue?
-What are the top-selling products?
-Which location performs best?
-What is the average transaction value?
-How does daily revenue change over time?
+The analysis includes:
 
-📈 Example Analytical Queries
-Total revenue
-SELECT SUM(total_spent) AS total_revenue
-FROM cafe_sales;
-Top 3 best-selling items
-SELECT
-	item,
-	SUM(quantity) AS total_sold_quantity
-FROM cafe_sales
-GROUP BY item
-ORDER BY total_sold_quantity DESC
-LIMIT 3;
-Daily revenue
-SELECT 
-	transaction_date,
-	SUM(total_spent) AS daily_revenue
-FROM cafe_sales
-GROUP BY transaction_date
-ORDER BY transaction_date;
-
-⚡ Advanced SQL Techniques Used
-
-This project also demonstrates more advanced SQL concepts:
-
-Window functions
-Subqueries
+Basic Queries
+retrieving transactions
+filtering specific products
+exploring unique items
 Aggregations
-Ranking functions
-Analytical views
-Example: Running daily revenue
-SELECT
-	transaction_date,
-	total_spent,
-	SUM(total_spent) OVER(
-		PARTITION BY transaction_date
-		ORDER BY transaction_date
-	) AS running_daily_revenue
-FROM cafe_sales;
+total café revenue
+average transaction value
+revenue by payment method
+quantity sold per item
+Business Questions
 
-📂 Project Structure
+Examples of questions explored:
 
-cafe-sales-sql-project
+Which item generates the highest revenue?
+What are the top selling items by quantity?
+How does revenue change over time?
+What is the difference between In-Store and Takeaway sales performance?
+Advanced SQL Techniques
+
+The analysis also includes more advanced SQL concepts:
+
+window functions
+ranking functions
+subqueries
+analytical views
+
+🧠 Example Insight
+
+Using SQL aggregations and ranking functions, it is possible to identify:
+
+the best-performing products
+daily revenue trends
+transaction value distribution
+differences between In-Store and Takeaway orders
+🛠 Technologies Used
+SQL
+MySQL
+MySQL Workbench
+
+📁 Repository Structure
+sql-cafe-sales-data-cleaning-analysis
 │
 ├── data_cleaning.sql
 ├── data_analysis.sql
 └── README.md
 
-🛠 Technologies Used
-SQL
-MySQL
-Kaggle Dataset
+🎯 Project Purpose
 
-🎯 Skills Demonstrated
+This project was built as part of a data analytics learning path to practice:
 
-This project highlights several key data analytics skills:
-
-Data cleaning in SQL
-Data validation techniques
-Data quality auditing
-Business-oriented SQL analysis
-Window functions and ranking
-Analytical view creation
-
-📌 Key Insights
-
-Example findings from the dataset:
-
-Certain items generate significantly more revenue than others
-Payment methods show different revenue distributions
-Sales patterns vary by location
-Daily revenue trends can be monitored with SQL views
+real-world data cleaning
+SQL query design
+exploratory data analysis
+writing structured, production-style SQL scripts
 
 🚀 Future Improvements
 
-Possible extensions of the project:
+Possible future extensions:
 
-Build a Power BI / Tableau dashboard
-Add monthly and weekly revenue analysis
-Create customer segmentation
-Implement stored procedures for automated cleaning
-
-👩‍💻 Author
-
-Klára Ilyés
-
-Aspiring Data Analyst / Data Engineer focused on SQL, data cleaning, and data analysis.
+building a Power BI or Tableau dashboard
+adding time-based sales analysis
+implementing customer behavior insights
