@@ -1,5 +1,6 @@
 ☕ SQL Data Cleaning & Analysis — Cafe Sales Dataset
 
+
 📌 Project Overview
 
 This project demonstrates a complete SQL workflow using a messy café sales dataset.
@@ -8,6 +9,7 @@ The goal was to clean and standardize transactional data before performing explo
 The dataset contained multiple data quality issues such as inconsistent values, invalid dates, and non-standard formats. After cleaning the dataset, various SQL queries were used to analyze sales performance and generate business insights.
 
 This project focuses on building practical SQL skills relevant for real-world data analytics tasks.
+
 
 📂 Dataset
 
@@ -24,6 +26,7 @@ total spent
 payment method
 order type (In-Store / Takeaway)
 transaction date
+
 
 🧹 Data Cleaning Process
 
@@ -68,6 +71,7 @@ total spent mismatches (quantity * price_per_unit)
 duplicate transactions
 missing dates
 
+
 📊 Data Analysis
 
 After cleaning the dataset, multiple SQL queries were written to explore the sales data.
@@ -100,6 +104,7 @@ ranking functions
 subqueries
 analytical views
 
+
 🧠 Example Insight
 
 Using SQL aggregations and ranking functions, it is possible to identify:
@@ -113,12 +118,14 @@ SQL
 MySQL
 MySQL Workbench
 
+
 📁 Repository Structure
 sql-cafe-sales-data-cleaning-analysis
 │
 ├── data_cleaning.sql
 ├── data_analysis.sql
 └── README.md
+
 
 🎯 Project Purpose
 
@@ -128,6 +135,7 @@ real-world data cleaning
 SQL query design
 exploratory data analysis
 writing structured, production-style SQL scripts
+
 
 🚀 Future Improvements
 
