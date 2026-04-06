@@ -33,10 +33,12 @@ A structured SQL cleaning pipeline was implemented to prepare the dataset for an
 Created a dedicated database
 Imported the raw dataset
 Created a working table for cleaning
+
 2️⃣ Column Standardization
 Renamed columns to consistent snake_case
 Converted columns to appropriate data types
 Standardized numeric fields
+
 3️⃣ Date Cleaning
 
 Invalid values such as:
